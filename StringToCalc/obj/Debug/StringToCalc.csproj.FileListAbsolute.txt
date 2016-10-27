@@ -1,0 +1,15 @@
+c:\users\davidpc\documents\visual studio 2015\Projects\StringToCalc\StringToCalc\bin\Debug\StringToCalc.exe.config
+c:\users\davidpc\documents\visual studio 2015\Projects\StringToCalc\StringToCalc\bin\Debug\StringToCalc.exe
+c:\users\davidpc\documents\visual studio 2015\Projects\StringToCalc\StringToCalc\bin\Debug\StringToCalc.pdb
+c:\users\davidpc\documents\visual studio 2015\Projects\StringToCalc\StringToCalc\obj\Debug\StringToCalc.csprojResolveAssemblyReference.cache
+c:\users\davidpc\documents\visual studio 2015\Projects\StringToCalc\StringToCalc\obj\Debug\StringToCalc.exe
+c:\users\davidpc\documents\visual studio 2015\Projects\StringToCalc\StringToCalc\obj\Debug\StringToCalc.pdb
+C:\Users\DavidPC\Desktop\StringToCalc_დავით_საგინაშვილი\StringToCalc\bin\Debug\StringToCalc.exe.config
+C:\Users\DavidPC\Desktop\StringToCalc_დავით_საგინაშვილი\StringToCalc\obj\Debug\StringToCalc.exe
+C:\Users\DavidPC\Desktop\StringToCalc_დავით_საგინაშვილი\StringToCalc\obj\Debug\StringToCalc.pdb
+C:\Users\DavidPC\Desktop\StringToCalc\StringToCalc\bin\Debug\StringToCalc.exe.config
+C:\Users\DavidPC\Desktop\StringToCalc\StringToCalc\obj\Debug\StringToCalc.exe
+C:\Users\DavidPC\Desktop\StringToCalc\StringToCalc\obj\Debug\StringToCalc.pdb
+C:\Users\DavidPC\Desktop\StringToCalc\StringToCalc\bin\Debug\StringToCalc.exe
+C:\Users\DavidPC\Desktop\StringToCalc\StringToCalc\bin\Debug\StringToCalc.pdb
+C:\Users\DavidPC\Desktop\StringToCalc\StringToCalc\obj\Debug\StringToCalc.csprojResolveAssemblyReference.cache
