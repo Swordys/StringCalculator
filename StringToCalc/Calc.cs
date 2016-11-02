@@ -53,25 +53,25 @@ namespace StringToCalc
 
             float result = 0;
 
-            var curly = @"\(\d+.\d+\)";
+            var curly = @"\((\-)*(\d+)(\.\d+)*(\D)(\-)*(\d+)(\D\d+)*(\))";
             var CurlyReggo = new Regex(curly);
 
-            var root = @"(\d+(\.\d+)*\^\d+(\.\d+)*)";
+            var root = @"(\d+(\.\d+)*\^(\-)*\d+(\.\d+)*)";
             var RootReggo = new Regex(root);
 
             var percent = @"(\d+(\.\d+)*\%\d+(\.\d+)*)";
             var PercentReggo = new Regex(percent);
 
-            var multi = @"(\d+(\.\d+)*\*\d+(\.\d+)*)";
+            var multi = @"(\-)*(\d+(\.\d+)*\*(\-)*\d+(\.\d+)*)";
             var MultiReggo = new Regex(multi);
 
-            var divide = @"(\d+(\.\d+)*\/\d+(\.\d+)*)";
+            var divide = @"(\-)*(\d+(\.\d+)*\/(\-)*\d+(\.\d+)*)";
             var DivideReggo = new Regex(divide);
 
-            var plus = @"(\d+(\.\d+)*\+\d+(\.\d+)*)";
+            var plus = @"(\-)*(\d+(\.\d+)*\+\d+(\.\d+)*)";
             var PlusReggo = new Regex(plus);
 
-            var minus = @"(\d+(\.\d+)*\-\d+(\.\d+)*)";
+            var minus = @"(\-)*(\d+(\.\d+)*\-\d+(\.\d+)*)";
             //var minus = @"(\d+(\.\d+)*\-\d+(\.\d+)*)(\-\d+(\.\d+)*)*";
 
             var MinuseReggo = new Regex(minus);
@@ -131,7 +131,7 @@ namespace StringToCalc
             {
                 var calcInput = PlusReggo.Match(input).ToString();
                 result = PlusFan(calcInput);
-                input = input.Replace(calcInput, result.ToString());
+                input = input.Replace(calcInput,"+" + result.ToString());
             }
 
             while (MinuseReggo.IsMatch(input))
@@ -159,9 +159,21 @@ namespace StringToCalc
 
             var multiRes = result[0];
 
+            var check = new Regex(@"\-\d+");
+
+            if (check.IsMatch(lisTest[1]))
+            {
+                result[1] *= -1;
+            }
+
             for (int i = 0; i < result[1] - 1; i++)
             {
-                multiRes *= multiRes;
+                multiRes *= result[0];
+            }
+
+            if (check.IsMatch(lisTest[1]))
+            {
+                multiRes = 1 / multiRes;
             }
 
             return multiRes;
@@ -234,21 +246,36 @@ namespace StringToCalc
                 result.Add(float.Parse(lisTest[i]));
             }
 
-            return result.Sum();
+            var answer = result[0] + result[1];
+            var answMin = "";
+            
+            var check = new Regex(@"\-\d+");
+            if (!check.IsMatch((answer).ToString()))
+            {
+                answMin = "+" + answer.ToString();
+            }
+
+           
+            return answer;
         }
         #endregion
 
         #region სხვაობა
         public float MinusFan(string input)
         {
+            var pattMin = @"(\-)*(\d+)(\.\d+)*";
+            var check = new Regex(pattMin);
+
+            var lisTestMin = check.Matches(input);
+
             var lisTest = input.Split('-').ToList();
             var result = new List<float>();
-            for (int i = 0; i < lisTest.Count; i++)
+            for (int i = 0; i < lisTestMin.Count; i++)
             {
-                result.Add(float.Parse(lisTest[i]));
+                result.Add(float.Parse(lisTestMin[i].ToString()));
             }
 
-            return result[0] - result[1];
+            return result[0] + result[1];
         }
         #endregion
 
